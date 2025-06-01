@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homework26</title>
+    <link rel="stylesheet" href="style-26.css">
+</head>
+<body>
+   <div class="container" id="container">
+    <!-- <div class="box-item">
+      <div class="image">
+        <img src="../Img/ice coffee.png" alt="">
+      </div>
+      <div class="des">
+        <p>ID: 1</p>
+        <p>Name: A</p>
+        <p>Price: 9$</p>
+        <p>Category: Men</p>
+      </div>
+    </div>
+    <div class="box-item">
+      <div class="image">
+       
+      </div>
+      <div class="des">
+
+      </div>
+    </div>
+    <div class="box-item">
+      <div class="image">
+       
+      </div>
+      <div class="des">
+
+      </div>
+    </div>
+    <div class="box-item">
+      <div class="image">
+      
+      </div>
+      <div class="des">
+
+      </div>
+    </div>
+    <div class="box-item">
+      <div class="image">
+      
+      </div>
+      <div class="des">
+
+      </div>
+    </div>
+    <div class="box-item">
+      <div class="image">
+       
+      </div>
+      <div class="des">
+
+      </div>
+    </div>
+     <div class="box-item">
+      <div class="image">
+       
+      </div>
+      <div class="des">
+
+      </div>
+    </div>
+     <div class="box-item">
+      <div class="image">
+       
+      </div>
+      <div class="des">
+
+      </div>
+    </div> -->
+
+   </div>
+    
+   <script>
+    fetch('https://fakestoreapi.com/products')
+    .then(response => response.json())
+    .then(data => {
+    var item = "";
+    for (var i in data){
+     item = item + `
+      <div class="box-item">
+      <div class="image">
+        <img src="${data[i].image}" alt="">
+      </div>
+      <div class="des">
+     
+        <p><strong>Name:</strong>$ ${data[i].title}</p>
+        <p><strong>Price:</strong>$  ${data[i].price}</p>
+        <p><strong>Category:</strong>$  ${data[i].category}</p>
+      </div>
+    </div>
+     `;
+    }
+    document.querySelector('#container').innerHTML = item;
+    }
+    );
+</script>
+</body>
+</html>
